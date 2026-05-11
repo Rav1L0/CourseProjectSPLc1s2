@@ -1,14 +1,35 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Имя репозитория на GitHub (как в URL: user.github.io/ИМЯ_РЕПО/)
-// Если сайт в корне (username.github.io без подпапки) — поставьте base: '/'
-const GITHUB_PAGES_BASE = '/CourseProjectSPLc1s2/'
+/**
+ * База для GitHub Pages (префикс всех путей к JS/CSS).
+ *
+ * Сайт в КОРНЕ user.github.io (репозиторий username.github.io):
+ *   npm run build:gh-root
+ *
+ * Сайт в ПОДПАПКЕ user.github.io/ИмяРепо/:
+ *   npm run build:gh-project
+ *   (или задайте VITE_GH_PAGES_BASE=/ИмяРепо/ перед vite build)
+ */
+function productionBase() {
+  const raw = process.env.VITE_GH_PAGES_BASE
+  if (raw === undefined || String(raw).trim() === '') {
+    return '/CourseProjectSPLc1s2/'
+  }
+  let b = String(raw).trim()
+  if (!b.startsWith('/')) {
+    b = '/' + b
+  }
+  if (b !== '/' && !b.endsWith('/')) {
+    b = b + '/'
+  }
+  return b
+}
 
 // https://vite.dev/config/
 export default defineConfig(function ({ mode }) {
   return {
     plugins: [react()],
-    base: mode === 'production' ? GITHUB_PAGES_BASE : '/',
+    base: mode === 'production' ? productionBase() : '/',
   }
 })

@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/copy-404-for-gh-pages.mjs",
+    "build:gh-root": "VITE_GH_PAGES_BASE=/ vite build && node scripts/copy-404-for-gh-pages.mjs",
+    "build:gh-project": "VITE_GH_PAGES_BASE=/CourseProjectSPLc1s2/ vite build && node scripts/copy-404-for-gh-pages.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
