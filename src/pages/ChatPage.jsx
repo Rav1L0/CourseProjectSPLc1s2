@@ -16,6 +16,8 @@ import styles from './ChatPage.module.scss'
 
 const MAX_MESSAGE_LENGTH = 2000
 
+const DATA_XML_URL = import.meta.env.BASE_URL + 'data.xml'
+
 export default function ChatPage() {
   const [helpTopics, setHelpTopics] = useState([])
   const [topicsLoading, setTopicsLoading] = useState(true)
@@ -52,7 +54,7 @@ export default function ChatPage() {
   }
 
   useEffect(function () {
-    fetchHelpTopics('/data.xml')
+    fetchHelpTopics(DATA_XML_URL)
       .then(function (topics) {
         applyTopics(topics)
       })
@@ -68,7 +70,7 @@ export default function ChatPage() {
     setTopicsLoading(true)
     setTopicsError('')
 
-    fetchHelpTopics('/data.xml')
+    fetchHelpTopics(DATA_XML_URL)
       .then(function (topics) {
         applyTopics(topics)
       })
