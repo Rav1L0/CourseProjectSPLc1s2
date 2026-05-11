@@ -1,0 +1,143 @@
+@use '../../styles/variables.scss' as v;
+
+.main {
+  border: 1px solid v.$color-border;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: v.$radius;
+  padding: v.$spacing-4;
+  display: flex;
+  flex-direction: column;
+  min-height: 68svh;
+}
+
+.topBar {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-2;
+  margin-bottom: v.$spacing-3;
+}
+
+.topRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$spacing-3;
+  width: 100%;
+}
+
+.topicBadge {
+  flex: 1 1 200px;
+  min-width: 0;
+  padding: v.$spacing-2 v.$spacing-3;
+  border-radius: 999px;
+  border: 1px solid v.$color-border;
+  background: rgba(255, 255, 255, 0.03);
+  color: v.$color-muted;
+  font-size: 13px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$spacing-2;
+  justify-content: flex-end;
+}
+
+.toolBtn {
+  flex-shrink: 0;
+  padding: v.$spacing-2 v.$spacing-3;
+  font-size: 12px;
+  border-radius: 10px;
+  border: 1px solid v.$color-border;
+  background: v.$color-surface-2;
+  color: v.$color-muted;
+  cursor: pointer;
+}
+
+.toolBtn:hover:not(:disabled) {
+  color: v.$color-text;
+  border-color: v.$color-accent-border;
+}
+
+.toolBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.toolBtnDanger:hover:not(:disabled) {
+  border-color: rgba(220, 80, 60, 0.55);
+  color: #fecaca;
+}
+
+.copyHint {
+  margin: 0;
+  font-size: 12px;
+  color: v.$color-accent-2;
+}
+
+.messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: v.$spacing-3;
+  border-radius: 16px;
+  border: 1px solid v.$color-border;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.empty {
+  padding: v.$spacing-4;
+  color: v.$color-muted;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.messageRow {
+  display: flex;
+  margin-bottom: v.$spacing-3;
+}
+
+.user {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 78%;
+  border-radius: 18px;
+  padding: v.$spacing-3 v.$spacing-4;
+  border: 1px solid v.$color-border;
+  background: v.$color-surface;
+  color: v.$color-text;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.user .bubble {
+  background: rgba(217, 119, 54, 0.2);
+  border-color: v.$color-accent-border;
+}
+
+.assistant {
+  justify-content: flex-start;
+}
+
+.assistant .bubble {
+  background: rgba(109, 155, 122, 0.12);
+  border-color: rgba(109, 155, 122, 0.35);
+}
+
+.typing {
+  font-size: 13px;
+  color: v.$color-muted;
+  padding: v.$spacing-2 0;
+  font-style: italic;
+}
+

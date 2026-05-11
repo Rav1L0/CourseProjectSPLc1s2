@@ -1,0 +1,191 @@
+@use '../../styles/variables.scss' as v;
+
+.sidebar {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius;
+  padding: v.$spacing-4;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-3;
+}
+
+.headingRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: v.$spacing-3;
+}
+
+.heading {
+  margin: 0;
+  font-family: v.$font-body;
+  font-size: 13px;
+  color: v.$color-muted;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.status {
+  font-size: 13px;
+  color: v.$color-muted;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-3;
+}
+
+.topicRow {
+  border-radius: 16px;
+  border: 1px solid v.$color-border;
+  background: rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.topicRowInner {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-2;
+}
+
+.detailsToggle {
+  align-self: flex-end;
+  margin: 0 v.$spacing-3 v.$spacing-3;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: v.$color-accent-2;
+  background: transparent;
+  border: 1px solid v.$color-accent-border;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.detailsToggle:hover:not(:disabled) {
+  background: v.$color-accent-bg;
+  color: v.$color-text;
+}
+
+.detailsToggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.topicDetails {
+  padding: v.$spacing-4 v.$spacing-3 v.$spacing-4;
+  border-top: 1px solid v.$color-border;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.detailText {
+  margin: 0 0 v.$spacing-3;
+  font-size: 13px;
+  line-height: 1.55;
+  color: v.$color-muted;
+  white-space: pre-wrap;
+}
+
+.materialLink {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: v.$color-accent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.materialLink:hover {
+  filter: brightness(1.1);
+}
+
+.topicButton {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: v.$spacing-2;
+  padding: v.$spacing-3 v.$spacing-3 v.$spacing-4;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: v.$color-text;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+  text-align: left;
+}
+
+.topicButton:hover:not(:disabled) {
+  background: v.$color-surface;
+  transform: translateY(-1px);
+}
+
+.topicButtonActive {
+  background: v.$color-accent-bg;
+  border-bottom-color: v.$color-accent-border;
+}
+
+.topicIcon {
+  margin-top: 1px;
+  color: v.$color-accent-2;
+  flex: 0 0 auto;
+}
+
+.topicText {
+  min-width: 0;
+}
+
+.topicTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 650;
+  color: v.$color-text;
+  line-height: 1.25;
+}
+
+.topicDescription {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  color: v.$color-muted;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.empty {
+  color: v.$color-muted;
+  font-size: 13px;
+  padding: v.$spacing-3;
+  border-radius: 14px;
+  border: 1px dashed v.$color-border;
+}
+
+.retryButton {
+  margin-top: v.$spacing-2;
+  width: 100%;
+  padding: v.$spacing-2 v.$spacing-3;
+  border-radius: 12px;
+  border: 1px solid v.$color-accent-border;
+  background: v.$color-accent-bg;
+  color: v.$color-text;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.retryButton:hover {
+  filter: brightness(1.08);
+}
+

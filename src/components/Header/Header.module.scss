@@ -1,0 +1,103 @@
+@use '../../styles/variables.scss' as v;
+
+.header {
+  width: 100%;
+  padding: v.$spacing-4 v.$spacing-5;
+}
+
+.inner {
+  max-width: 1220px;
+  margin: 0 auto;
+  border: 1px solid v.$color-border;
+  background: v.$color-surface;
+  border-radius: v.$radius;
+  box-shadow: v.$shadow;
+  padding: v.$spacing-4 v.$spacing-5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$spacing-4;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-3;
+  min-width: 0;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid v.$color-accent-border;
+  color: v.$color-accent;
+  background: v.$color-accent-bg;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: v.$font-display;
+  font-size: 18px;
+  margin: 0;
+  color: v.$color-text;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: v.$color-muted;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-3;
+}
+
+.menuBtn {
+  display: none;
+  align-items: center;
+  gap: v.$spacing-2;
+  padding: v.$spacing-2 v.$spacing-3;
+  border-radius: 10px;
+  border: 1px solid v.$color-border;
+  background: v.$color-surface-2;
+  color: v.$color-text;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menuBtn:hover {
+  border-color: v.$color-accent-border;
+}
+
+.menuIcon {
+  display: block;
+}
+
+.menuLabel {
+  font-weight: 600;
+}
+
+@media (max-width: 980px) {
+  .menuBtn {
+    display: inline-flex;
+  }
+}
+
+.homeWrap a {
+  font-size: 14px;
+  color: v.$color-muted;
+  text-decoration: none;
+}
+
+.homeWrap a:hover {
+  color: v.$color-text;
+  text-decoration: underline;
+}

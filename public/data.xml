@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpTopics>
+  <topic id="react-state">
+    <title>React: state и useState</title>
+    <description>Как хранить состояние и обновлять интерфейс.</description>
+    <longDescription>
+      Состояние в React — это данные, которые могут меняться. Когда вызывается функция
+      обновления состояния, React перерисовывает компонент. Обычно обработчики событий
+      (например, onClick) вызывают обновление состояния.
+    </longDescription>
+    <materialUrl>https://react.dev/learn/state-a-components-memory</materialUrl>
+  </topic>
+
+  <topic id="components-architecture">
+    <title>Компоненты и структура интерфейса</title>
+    <description>Разбиение экрана на Header, Sidebar, чат.</description>
+    <longDescription>
+      Большой интерфейс удобно делить на части: шапка, боковая панель, область чата.
+      Общие данные держат в родительском компоненте, а дочерним передают через props.
+      Так проще читать код и менять отдельные блоки.
+    </longDescription>
+    <materialUrl>https://react.dev/learn/your-first-component</materialUrl>
+  </topic>
+
+  <topic id="xml-parsing">
+    <title>XML: fetch и DOMParser</title>
+    <description>Загрузка файла data.xml в браузере.</description>
+    <longDescription>
+      Функция fetch получает текст файла. DOMParser превращает строку в документ,
+      после чего можно искать теги (например, topic) и собирать массив для React.
+      Так темы можно менять в файле, не переписывая весь код.
+    </longDescription>
+    <materialUrl>https://developer.mozilla.org/ru/docs/Web/API/DOMParser</materialUrl>
+  </topic>
+
+  <topic id="scss-modules">
+    <title>SCSS Modules и стили</title>
+    <description>Модульные стили и переменные.</description>
+    <longDescription>
+      В SCSS Modules имена классов не пересекаются между файлами. Общие цвета
+      и отступы удобно вынести в variables.scss и подключать в каждом модуле.
+    </longDescription>
+    <materialUrl>https://vitejs.dev/guide/features.html#css-modules</materialUrl>
+  </topic>
+
+  <topic id="accessibility">
+    <title>Доступность и семантика</title>
+    <description>Теги main, nav, aria-label.</description>
+    <longDescription>
+      Семантические теги помогают программам чтения с экрана понять структуру страницы.
+      Для кнопок и полей полезно добавлять aria-label, если подпись неочевидна.
+    </longDescription>
+    <materialUrl>https://developer.mozilla.org/ru/docs/Learn/Accessibility/HTML</materialUrl>
+  </topic>
+
+  <topic id="chat-logic">
+    <title>Чат: массив сообщений</title>
+    <description>useState и отправка по Enter.</description>
+    <longDescription>
+      Сообщения хранят в массиве в useState. Новое сообщение добавляют через функцию
+      обновления: берут старый массив и добавляют элемент в конец. Список на экране
+      рисуют через map.
+    </longDescription>
+    <materialUrl>https://react.dev/learn/rendering-lists</materialUrl>
+  </topic>
+
+  <topic id="js-basics">
+    <title>JavaScript: основы для веба</title>
+    <description>Переменные, функции, массивы.</description>
+    <longDescription>
+      Для работы с React полезно понимать функции, массивы и объекты. Часто используют
+      map и filter для списков, а также обычные функции-обработчики для кнопок.
+    </longDescription>
+    <materialUrl>https://developer.mozilla.org/ru/docs/Learn/JavaScript/First_steps</materialUrl>
+  </topic>
+
+  <topic id="html-css-basics">
+    <title>HTML и CSS: разметка и внешний вид</title>
+    <description>Структура страницы и стили.</description>
+    <longDescription>
+      HTML задаёт структуру: заголовки, списки, кнопки. CSS задаёт внешний вид:
+      цвета, отступы, сетку. В этом проекте используется тёмная тема и адаптивная вёрстка.
+    </longDescription>
+    <materialUrl>https://developer.mozilla.org/ru/docs/Learn/HTML</materialUrl>
+  </topic>
+
+
+</helpTopics>
